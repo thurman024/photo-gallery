@@ -6,5 +6,5 @@
 #
 one: 
   username: "test_user"
-  password_digest: "password"
+  password_digest: <%= BCrypt::Password.create("password") %>
 

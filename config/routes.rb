@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "photos#index"
-  resource :session, only: [ :new, :create, :destroy ]
+  get "logout", to: "sessions#destroy", as: :logout
+  resource :session, only: [ :new, :create ]
   resources :photos, only: [ :index ] do
     resource :like, only: [ :create, :destroy ]
   end
